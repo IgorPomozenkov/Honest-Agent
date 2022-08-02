@@ -1,0 +1,507 @@
+@import './variables';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background: #FFFFFF;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  max-width: 1164px;
+  padding-left: 224px;
+}
+
+.commonBtn {
+  outline: none;
+  background: none;
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+  padding: 8px 40px;
+  color: $mainColor;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 160%;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid #CDCDCD;
+    color: #98C88C;
+  }
+
+  &:active {
+    border: 1px solid #CDCDCD;
+    color: #58A742;
+  }
+}
+
+.commonField {
+  outline: none;
+  padding: 10px 12px;
+  border: 1px solid #CDCDCD;
+  border-radius: 2px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $textColor;
+
+  &::placeholder {
+    color: #808080;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    border: 1px solid #808080;
+  }
+
+  &:focus {
+    border: 1px solid #3B3B3B;
+  }
+}
+
+.dialog {
+
+  .dialog__heading {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: $textColor;
+  }
+
+  .dialog__delCard {
+    width: 272px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $textColor;
+  }
+
+  .dialog__form {
+    width: 320px;
+  }
+
+  .dialog__field {
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .dialog__contract {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dialogType {
+    display: flex;
+    margin-top: 10px;
+  }
+
+  .dialogType__field:nth-child(1) {
+    margin-right: 10px;
+  }
+
+  .dialog__actions {
+    padding: 25px;
+    justify-content: space-between;
+  }
+
+  .dialog__btn {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    &:hover {
+      background-color: inherit;
+    }
+
+    &:first-child {
+      color: #B9B9B9;
+    }
+
+    &:last-child {
+      color: #82B284;
+    }
+  }
+}
+
+header {
+  min-height: 900px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 1;
+
+  .menu {
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: $mainColor;
+  }
+
+  .menu__topLinks, .menu__bottomLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu__link {
+    padding: 20px 14px;
+    text-decoration: none;
+
+    &:hover {
+      background: #A4C7A5;
+    }
+
+    .menu__icon {
+      display: block;
+    }
+  }
+
+  .menu__link_active {
+    background: #A4C7A5;
+  }
+
+  .sideMenu {
+    width: 224px;
+    background: #F7F7F7;
+  }
+
+  .sideMenu__heading {
+    margin: 20px 0;
+    text-align: center;
+
+    h3 {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 160%;
+      letter-spacing: 0.03em;
+      color: $textColor;
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 160%;
+      letter-spacing: 0.2px;
+      color: $textColor;
+    }
+  }
+
+  .sideMenu__links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sideMenu__link {
+    padding: 12px 17px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    color: $mainColor;
+
+    &:hover {
+      background: #EEEEEE;
+    }
+
+    .sideMenu__icon {
+      margin-right: 13px;
+    }
+  }
+
+  .sideMenu__link_active {
+    background: #EEEEEE;
+  }
+}
+
+main {
+  min-height: 900px;
+  padding-left: 48px;
+  flex-grow: 1;
+  position: relative;
+}
+
+.homePage {
+  min-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .auth__err {
+    margin-bottom: 7px;
+    text-align: center;
+    color: #d70e0e;
+    font-size: 18px;
+  }
+
+  .auth__btn {
+    width: 225px;
+  }
+
+  .userAuthed {
+    color: $mainColor;
+    font-size: 18px;
+  }
+
+  .userAuthed__name {
+    font-weight: 600;
+  }
+}
+
+.organizationsPage {
+
+  .organizationsList {
+    margin: 72px 0 0 40px;
+    list-style-position: inside;
+  }
+
+  .organizationsList__item {
+    padding: 8px 0px;
+    list-style-type: circle;
+    color: $mainColor;
+  }
+
+  .organizationsList__link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 160%;
+    color: $mainColor;
+
+    &:hover {
+      color: #98C88C;
+    }
+
+    &:active {
+      color: #58A742;
+    }
+  }
+}
+
+.cardPage {
+
+  .divider {
+    border: none;
+    margin: 0 40px;
+    outline: 1px solid #E5E5E5;
+  }
+
+  .dividerTop {
+    width: 100%;
+    margin: 0;
+  }
+
+  .cardTop {
+    min-height: 72px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cardTop__back {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: $mainColor;
+    cursor: pointer;
+
+    .cardTop__icon {
+      margin-right: 26px;
+    }
+  }
+
+  .cardTop__btns {
+    width: 108px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cardTop__imgBtn {
+      cursor: pointer;
+    }
+  }
+
+  .card__heading {
+    padding: 0 40px;
+    margin: 24px 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #222222;
+  }
+
+  .card__imgBtn {
+    margin-left: 17px;
+    cursor: pointer;
+  }
+
+  .organizationInfo {
+    padding: 0 40px;
+    margin-bottom: 32px;
+  }
+
+  .organizationInfo__heading, .contactInfo__heading, .photos__heading {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 15px;
+    color: $textColor;
+  }
+
+  .organizationInfo__text, .contactInfo__text {
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.25px;
+    color: $textColor;
+
+    .organizationInfo__span, .contactInfo__span {
+      width: 150px;
+      margin-right: 12px;
+      display: inline-block;
+      font-weight: 300;
+    }
+  }
+
+  .contactInfo {
+    padding: 0 40px;
+    margin: 31px 0;
+  }
+
+  .contactInfo__tel {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.25px;
+    color: $textColor;
+    text-decoration: none;
+  }
+
+  .contactInfo__email {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.25px;
+    color: $mainColor;
+    text-decoration: none;
+  }
+
+  .photos {
+    padding: 0 40px;
+    margin: 31px 0;
+  }
+
+  .photos__list {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .photos__item {
+    width: 160px;
+    position: relative;
+  }
+
+  .photos__imgBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+  }
+
+  .photos__link {
+    display: inline-block;
+
+    .photos__img {
+      display: block;
+    }
+  }
+
+  .photos__name {
+    margin: 4px 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $textColor;
+  }
+
+  .photos__date {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #808080;
+  }
+
+  .photos__btn {
+    padding: 8px 103px;
+
+    .span {
+      position: absolute;
+      left: 13px;
+      font-size: 27px;
+      font-weight: 300;
+    }
+  }
+}
+
+.inProgressPage, .notFoundPage {
+  min-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inProgressPage__text, .notFoundPage__text {
+    color: $mainColor;
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+}
+
+footer {
+  padding-left: 48px;
+
+  .footerInfo {
+    padding-top: 32px;
+    padding-bottom: 46px;
+  }
+
+  .footerInfo__text, .footerInfo__tel {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #B9B9B9;
+  }
+
+  .footerInfo__tel {
+    margin-top: 15px;
+
+    .footerText__link {
+      color: #B9B9B9;
+      text-decoration: none;
+    }
+  }
+}
